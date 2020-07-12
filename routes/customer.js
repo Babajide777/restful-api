@@ -27,11 +27,14 @@ router.get('/', (req, res) => {
     if(!req.query.email) {
       return res.status(400).send('Missing URL parameter: email')
     }
+    console.log('EMAIL!', req.query.email)
+    console.log(req.query.email);
   
     customerModel.findOne({
       email: req.query.email
     })
       .then(doc => {
+        console.log(doc);
         res.json(doc);
       })
       .catch(err => {
@@ -55,7 +58,8 @@ router.put('/', (req, res) => {
     new: true
   })
     .then(doc => {
-      res.json(doc)
+      console.log(doc);
+      return res.json(doc);
     })
     .catch(err => {
       res.status(500).json(err)

@@ -1,6 +1,9 @@
+
 let mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/new', { useNewUrlParser: true, useUnifiedTopology: true } );
+const uri = 'mongodb+srv://boss:peter1994@cluster0.ypnku.mongodb.net/new?retryWrites=true&w=majority';
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true } );
 
 const Schema = mongoose.Schema;
 
